@@ -198,7 +198,7 @@ h1 em{font-style:italic;color:var(--accent)}
 <script>
 const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxwHD8Teyy-Zms8kD0s5rRPfbVKWXxgnHX9TpF8H3rfJne_nACeKGAfEuPJIN9otIKK/exec';
 
-if (localStorage.getItem('userId')) window.location.href = 'index.html';
+if (localStorage.getItem('userId')) window.location.href = 'login.html';
 
 function showMsg(text, type) {
   const el = document.getElementById('msg');
@@ -226,7 +226,7 @@ async function doLogin() {
       localStorage.setItem('userId',    data.userId);
       localStorage.setItem('userEmail', email);
       showMsg('✓ Login successful! Redirecting…', 'ok');
-      setTimeout(() => { window.location.href = 'index.html'; }, 900);
+      setTimeout(() => { window.location.href = 'login.html'; }, 900);
     } else {
       showMsg(data.message || 'Invalid email or password.', 'fail');
       shake('password');
